@@ -608,21 +608,19 @@
     <div id="balloon-container"></div>
 
     <script>
-      var w = (c.width = window.innerWidth),
-        h = (c.height = window.innerHeight),
-        ctx = c.getContext("2d"),
-        hw = w / 2, // half-width
-        hh = h / 2,
-        opts = {
-          strings: ["HAPPY", "BIRTHDAY!", "TÂM NHƯ"],
-          charSize: 120,
-          charSpacing: 120,
-          lineHeight: 120,
-
-          cx: w / 2,
-          cy: h / 2,
-
-          fireworkPrevPoints: 10,
+var w = (c.width = window.innerWidth),
+    h = (c.height = window.innerHeight),
+    ctx = c.getContext("2d"),
+    hw = w / 2, // half-width
+    hh = h / 2,
+    opts = {
+        strings: ["HAPPY", "BIRTHDAY!", "TÂM NHƯ"],
+        charSize: Math.min(120, w / 10), // Giảm kích thước chữ để vừa màn hình
+        charSpacing: Math.max(35, w / 20), // Điều chỉnh khoảng cách giữa các ký tự
+        lineHeight: Math.max(100, h / 8), // Điều chỉnh khoảng cách giữa các dòng
+        cx: w / 2,
+        cy: h / 2,
+        fireworkPrevPoints: 10,
           fireworkBaseLineWidth: 5,
           fireworkAddedLineWidth: 8,
           fireworkSpawnTime: 200,
